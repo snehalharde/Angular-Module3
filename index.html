@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Search menu Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="script/angular.min.js"></script>
+    <script src="script/app.js"></script>
+    <style>      
+      li {
+          position: relative;
+        
+        margin-bottom: 7px;
+        margin-right: 110px;
+        font-size: 1.2em;
+      }
+      li > button {
+        
+        margin-left: 6px;
+      }
+      
+    </style>
+  </head>
+<body ng-app='NarrowItDownApp'>
+  <div class="container">
+  <h1>Search Menu Item</h1>
+      
+  <div  ng-controller ='NarrowItDownController as menu'>
+      <input type ="text" placeholder="Type in item" ng-model="menu.itemInput">      
+        <button ng-click="menu.searchMenuItems(menu.itemInput)">Narrow It Down For Me!.</button><br>
+        <p>You searched for : {{menu.itemInput}}</p>
+            <found-items found = 'menu.found' on-remove='menu.removeItem(index)'></found-items>
+          
+      </div>
+   
+</div>
+
+</body>
+</html>
