@@ -29,7 +29,7 @@
       <input type ="text" placeholder="Type in item" ng-model="menu.itemInput">      
         <button ng-click="menu.searchMenuItems(menu.itemInput)">Narrow It Down For Me!.</button><br>
         <p>You searched for : {{menu.itemInput}}</p>
-            <found-items found = 'menu.found' on-remove='menu.removeItem(index)'></found-items>
+            <found-items found = 'menu.found' on-remove='menu.removeItem(index)' nothing ='menu.nothing'></found-items>
           
       </div>
    

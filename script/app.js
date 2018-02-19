@@ -18,7 +18,6 @@
             controllerAs: 'menu',
             bindToController: true
         }
-
         return ddo;
     }
 
@@ -27,12 +26,13 @@
     function NarrowItDownController(MenuSearchService) {
         var menu = this;
         menu.itemInput = "";
+        
         menu.searchMenuItems = function() {
-            var promise1 =
-                MenuSearchService.getMatchedMenuItems(menu.itemInput);
+           
+            var promise1 =  MenuSearchService.getMatchedMenuItems(menu.itemInput);
             promise1.then(function(result) {
                     menu.found = result;
-                    console.log("result = " + result)
+                   
                 })
                 .catch(function(error) {
                     console.log(error);
@@ -56,7 +56,7 @@
 
         service.getMatchedMenuItems = function(searchTerm) {
             //reach out to server using $http to retrieve list of all menu items
-            var response = $http({
+           var response = $http({
                     method: 'GET',
                     url: ApiBasePath + '/menu_items.json',
                 })
